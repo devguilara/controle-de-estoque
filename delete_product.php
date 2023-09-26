@@ -8,19 +8,19 @@ if ($del_id && $_SERVER['REQUEST_METHOD'] == 'POST')
 
 	if($_SESSION['admin_type'] !== 'admin' && $_SESSION['admin_type'] !==  'super'){
 		$_SESSION['failure'] = "You don't have permission to perform this action";
-    	header('location: customers.php');
+    	header('location: product.php');
         exit;
 
 	}
-    $customer_id = $del_id;
-
+    $product_id = $del_id;
+    echo $del_id;
     $db = getDbInstance();
-    $db->where('id', $customer_id);
-    $status = $db->delete('product');
+    $db->where('id', $product_id);
+    $status = $db->delete('products');
     
     if ($status) 
     {
-        $_SESSION['info'] = "Customer deleted successfully!";
+        $_SESSION['info'] = "Product deleted successfully!";
         header('location: product.php');
         exit;
     }
