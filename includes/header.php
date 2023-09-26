@@ -80,7 +80,7 @@
                                     <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                                 </li>
                                 <li <?php echo (CURRENT_PAGE == "products.php" || CURRENT_PAGE == "add_products.php")?>>
-                                    <a href="#"><i class="fa fa-database fa-fw"></i> Estoque<span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-archive fa-fw"></i>Ativos<span class="fa arrow"></span></a>
                                     <ul class="nav nav-second-level">
                                         <li>
                                             <a href="products.php"><i class="fa fa-list fa-fw"></i>Listar Todos</a>

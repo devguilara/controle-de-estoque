@@ -58,16 +58,22 @@ if (isset($_COOKIE['series_id']) && isset($_COOKIE['remember_token']))
 
 include BASE_PATH.'/includes/header.php';
 ?>
-<div id="page-" class="col-md-4 col-md-offset-4">
+<div id="page" class="col-md-4 col-md-offset-4">
 	<form class="form loginform" method="POST" action="authenticate.php">
 		<div class="login-panel panel panel-default">
-			<div class="panel-heading">Acessar Sistema</div>
+			<div class="panel-heading">
+				<div class="text-center">
+					<img class="img-fluid" style="width:200px" src="./assets/img/logo-maltez.png" alt="" srcset="">
+				</div></div>
 			<div class="panel-body">
+				
 				<div class="form-group">
+					<i class="fa fa-user" aria-hidden="true"></i>
 					<label class="control-label">Usuário</label>
 					<input type="text" name="username" class="form-control" required="required">
 				</div>
 				<div class="form-group">
+					<i class="fa fa-key" aria-hidden="true"></i>
 					<label class="control-label">Senha</label>
 					<input type="password" name="passwd" class="form-control" required="required">
 				</div>
@@ -85,9 +91,15 @@ include BASE_PATH.'/includes/header.php';
 					?>
 				</div>
 				<?php endif; ?>
-				<button type="submit" class="btn btn-success loginField">Entrar</button>
+				<div class="text-center">
+					<button type="submit" class=" btn btn-success loginField">Entrar</button>
+				</div>
 			</div>
 		</div>
 	</form>
+	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright :
+    <a class="text-reset fw-bold" href="#">KS2 Soluções Empresariais e Tecnologia</a>
+     <p class="text-reset fw-bold">Versão - 1.0.0.0</p>
+  </div>
 </div>
-<?php include BASE_PATH.'/includes/footer.php'; ?>

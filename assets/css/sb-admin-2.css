@@ -1,7 +1,9 @@
 
 body {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
+
+
 #wrapper {
   width: 100%;
 }
@@ -17,6 +19,9 @@ body {
     padding: 0 30px;
     border-left: 1px solid #e7e7e7;
   }
+}
+.navbar-default {
+  background-color: #ffffff !important;
 }
 .navbar-top-links {
   margin-right: 0;
