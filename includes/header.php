@@ -101,6 +101,7 @@
                                     </li>
                                     </ul>
                                 </li>
+                                <?php if ($_SESSION['admin_type'] !== 'user'): ?>
                                 <li <?php echo (CURRENT_PAGE == "admin_users.php" || CURRENT_PAGE == "admin_users.php"); ?>>
                                     <a href="#"><i class="fa fa-user fa-fw"></i> Usuários<span class="fa arrow"></span></a>
                                     <ul class="nav nav-second-level">
@@ -112,7 +113,7 @@
                                     </li>
                                     </ul>
                                 </li>
-                               
+                               <?php endif; ?>
                              
                             
                               

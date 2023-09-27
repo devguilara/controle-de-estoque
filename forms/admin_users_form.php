@@ -1,9 +1,9 @@
 <fieldset>
     <!-- Form Name -->
-    <legend>Add new admin user</legend>
+    <legend>Adicionar novo Usuário ADM</legend>
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label">User name</label>
+        <label class="col-md-4 control-label">Usuário</label>
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -13,7 +13,7 @@
     </div>
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" >Password</label>
+        <label class="col-md-4 control-label" >Senha</label>
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -23,7 +23,7 @@
     </div>
     <!-- radio checks -->
     <div class="form-group">
-        <label class="col-md-4 control-label">User type</label>
+        <label class="col-md-4 control-label">Tipo de Usuário</label>
         <div class="col-md-4">
             <div class="radio">
                 <label>
@@ -36,13 +36,19 @@
                     <input type="radio" name="admin_type" value="admin" required="" <?php echo ($edit && $admin_account['admin_type'] =='admin') ? "checked": "" ; ?>/> Admin
                 </label>
             </div>
+            <div class="radio">
+                <label>
+                    <?php //echo $admin_account['admin_type'] ?>
+                    <input type="radio" name="admin_type" value="user" required="" <?php echo ($edit && $admin_account['admin_type'] =='user') ? "checked": "" ; ?>/> Colaborador
+                </label>
+            </div>
         </div>
     </div>
     <!-- Button -->
     <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-4">
-            <button type="submit" class="btn btn-warning" >Save <span class="glyphicon glyphicon-send"></span></button>
+            <button type="submit" class="btn btn-warning" >Cadastrar <span class="glyphicon glyphicon-send"></span></button>
         </div>
     </div>
 </fieldset>

@@ -48,7 +48,7 @@ require_once 'includes/header.php';
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Add User</h2>
+			<h2 class="page-header">Cadastrar Usuário</h2>
 		</div>
 	</div>
 	 <?php 

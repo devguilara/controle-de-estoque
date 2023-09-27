@@ -71,7 +71,7 @@ include BASE_PATH.'/includes/header.php';
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-6">
-            <h1 class="page-header">Admin users</h1>
+            <h1 class="page-header">Usuários</h1>
         </div>
         <div class="col-lg-6">
             <div class="page-action-links text-right">

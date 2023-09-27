@@ -62,7 +62,7 @@ include BASE_PATH . '/includes/header.php';
         </div>
         <div class="col-lg-6">
             <div class="page-action-links text-right">
-                <a href="add_product.php?operation=create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add new</a>
+                <a href="add_product.php?operation=create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Novo</a>
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@ if ($order_by == 'Desc') {
 
 
     <div id="export-section">
-        <a href="export_customers.php"><button class="btn btn-sm btn-primary">Export to CSV <i class="glyphicon glyphicon-export"></i></button></a>
+        <a href="export_customers.php"><button class="btn btn-sm btn-primary">Exportar para CSV <i class="glyphicon glyphicon-export"></i></button></a>
     </div>
 
     <!-- Table -->

@@ -7,7 +7,7 @@ if ($del_id && $_SERVER['REQUEST_METHOD'] == 'POST')
 {
 
 	if($_SESSION['admin_type'] !== 'admin' && $_SESSION['admin_type'] !==  'super'){
-		$_SESSION['failure'] = "You don't have permission to perform this action";
+		$_SESSION['failure'] = "Você nao tem permissão para excluir ativos, entrar em contato com administrador";
     	header('location: customers.php');
         exit;
 
@@ -20,13 +20,13 @@ if ($del_id && $_SERVER['REQUEST_METHOD'] == 'POST')
     
     if ($status) 
     {
-        $_SESSION['info'] = "Customer deleted successfully!";
+        $_SESSION['info'] = "Colaborador deletado com sucesso!!";
         header('location: customers.php');
         exit;
     }
     else
     {
-    	$_SESSION['failure'] = "Unable to delete customer";
+    	$_SESSION['failure'] = "Não foi possivel deletar o colaborador";
     	header('location: customers.php');
         exit;
 
