@@ -11,8 +11,8 @@
 
     <div class="form-group">
     <label>Tipo</label>
-           <?php $opt_arr = array("Notebook", "Desktop", "Storage", "Mouse", "Adaptadores", "Teclado"); 
-                            ?>
+           <?php $opt_arr = array("Notebook", "Desktop", "Storage", "Mouse", "Adaptadores", "Teclado","Geral"); 
+           ?>
             <select name="categoria" class="form-control selectpicker" required>
                 <option value=" " >Selecione o tipo do Ativo</option>
                 <?php
@@ -24,9 +24,8 @@
                     }
                     echo '<option value="'.$opt.'"' . $sel . '>' . $opt . '</option>';
                 }
-
-                ?>
-            </select>
+            ?>
+            </select>          
     </div> 
     
     <div class="form-group">
