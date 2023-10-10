@@ -114,6 +114,20 @@
                                     </ul>
                                 </li>
                                <?php endif; ?>
+
+                               <?php if ($_SESSION['admin_type'] !== 'user'): ?>
+                                <li <?php echo (CURRENT_PAGE == "admin_users.php" || CURRENT_PAGE == "admin_users.php"); ?>>
+                                    <a href="#"><i class="fa fa-user fa-fw"></i>Ativos X Colaboradores<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                        <li>
+                                            <a href="ativo_colaborador.php"><i class="fa fa-list fa-fw"></i>Listar Todos</a>
+                                        </li>
+                                    <li>
+                                        <a href="add_admin.php"><i class="fa fa-plus fa-fw"></i>Adicionar</a>
+                                    </li>
+                                    </ul>
+                                </li>
+                               <?php endif; ?>
                             </ul>
                         </div>
                         <!-- /.sidebar-collapse -->

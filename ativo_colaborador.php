@@ -52,9 +52,8 @@ $db->pageLimit = $pagelimit;
 $rows = $db->arraybuilder()->paginate('usuarios', $page, $select);
 $total_pages = $db->totalPages;
 
-$rows2 = $db->rawQuery("SELECT products.nome_produto FROM products INNER JOIN usuarios ON products.usuario_id = usuarios.id;");
+$rows2 = $db->rawQuery("SELECT  usuarios.id as id,usuarios.nome, products.nome_produto FROM products INNER JOIN usuarios ON products.usuario_id = usuarios.id;");
 
-var_dump($rows2);
 
 include BASE_PATH . '/includes/header.php';
 ?>
@@ -62,7 +61,7 @@ include BASE_PATH . '/includes/header.php';
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-6">
-            <h1 class="page-header">Colaboradores</h1>
+            <h1 class="page-header">Ativos X Colaboradores</h1>
         </div>
         <div class="col-lg-6">
             <div class="page-action-links text-right">
@@ -113,34 +112,26 @@ if ($order_by == 'Desc') {
     <table class="table table-striped table-bordered table-condensed">
         <thead>
             <tr>
-                <th width="5%">ID</th>
-                <th width="45%">Nome</th>
+                <th width="45%">Nome Colaborador</th>
                 <th width="20%">Maquina</th>
-                <th width="20%">Status</th>
-
                 <th width="10%">Actions</th>
                 
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($rows as $row): ?>
+            <?php foreach ($rows2 as $row2): ?>
             <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo xss_clean($row['nome']); ?></td>
-                <td><?php echo xss_clean($row['tipo_maquina']); ?></td>
-                <td><?php if($row['status'] === 1){
-                    echo 'Ativo';
-                }else {
-                    echo 'Inativo';
-                }
-                ?></td>
+
+                <td><?php echo xss_clean($row2['nome']); ?></td>
+                <td><?php echo xss_clean($row2['nome_produto']); ?></td>
+               
                 <td>
-                    <a href="edit_customer.php?customer_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="#" class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row['id']; ?>"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a href="edit_customer.php?customer_id=<?php echo $row2['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="#" class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row2['id']; ?>"><i class="glyphicon glyphicon-trash"></i></a>
                 </td>
             </tr>
             <!-- Delete Confirmation Modal -->
-            <div class="modal fade" id="confirm-delete-<?php echo $row['id']; ?>" role="dialog">
+            <div class="modal fade" id="confirm-delete-<?php echo $row2['id']; ?>" role="dialog">
                 <div class="modal-dialog">
                     <form action="delete_customer.php" method="POST">
                         <!-- Modal content -->
@@ -150,7 +141,7 @@ if ($order_by == 'Desc') {
                                 <h4 class="modal-title">Confirm</h4>
                             </div>
                             <div class="modal-body">
-                                <input type="hidden" name="del_id" id="del_id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="del_id" id="del_id" value="<?php echo $row2['id']; ?>">
                                 <p>Are you sure you want to delete this row?</p>
                             </div>
                             <div class="modal-footer">
@@ -175,8 +166,3 @@ if ($order_by == 'Desc') {
 </div>
 <!-- //Main container -->
 <?php include BASE_PATH . '/includes/footer.php';?>
-<?php foreach ($rows2 as $rows2): ?>
-                <td>
-                    <?php echo xss_clean($rows2['nome_produto']); ?>
-                </td>
-                <?php endforeach;?>
