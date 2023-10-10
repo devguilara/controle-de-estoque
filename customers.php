@@ -54,7 +54,6 @@ $total_pages = $db->totalPages;
 
 $rows2 = $db->rawQuery("SELECT products.nome_produto FROM products INNER JOIN usuarios ON products.usuario_id = usuarios.id;");
 
-var_dump($rows2);
 
 include BASE_PATH . '/includes/header.php';
 ?>
